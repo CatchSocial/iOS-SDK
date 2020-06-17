@@ -112,7 +112,7 @@
 
 #if TARGET_OS_TV
 #else
-    self.marqueeType = MLContinuous;
+//    self.marqueeType = MLContinuous;
 #endif
 
 }

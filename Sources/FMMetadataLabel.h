@@ -24,7 +24,7 @@
 
 #if TARGET_OS_TV
 #else
-#import <MarqueeLabel/MarqueeLabel.h>
+//#import <MarqueeLabel/MarqueeLabel-Swift.h>
 #endif
 
 /**
@@ -52,7 +52,7 @@
 @interface FMMetadataLabel : UILabel
 
 #else
-@interface FMMetadataLabel : MarqueeLabel
+@interface FMMetadataLabel : UILabel
 
 #endif
 

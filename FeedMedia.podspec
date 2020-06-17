@@ -33,7 +33,6 @@ DESC
   s.tvos.deployment_target = '11.0'
 
   # common source files/dependencies
-  s.dependency "MarqueeLabel", "~> 3.1.4"
 	s.source_files = [ 'Sources/*.{m,h}', 'Core/Feed*.h', 'Core/FM*.h' ]
 	s.public_header_files = [ 'Sources/*.h', 'Core/Feed*.h', 'Core/FM*.h' ]
 
