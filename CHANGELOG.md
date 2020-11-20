@@ -1,5 +1,48 @@
+- v4.4.12
+ -More bug fixes
+
+- v4.4.11
+ -Bug fixes in Simulcast streamer.
+
+- v4.4.10
+  -Add AVsession to Simulcast.
+  
+- v4.4.9
+ -Fix issues with xcode 12
+ 
+- v4.4.8 
+ -Fix issues with xcode 12
+ 
+- v4.4.7
+ - Changes in Simulcast behaviour.
+
+- v4.4.6
+ - Fix voume bug in Simulcast.
+
+- v4.4.5
+ - Changes to simulcast and bug fixes.
+
+- v4.4.4
+ - Add support for overlay simulcast.
+ - Add in Studio simulcast support.
+
+- v4.4.3-beta1
+ - Move to XCFrameworks
+ - Add support for Mac Catalyst.
+ - Add in Studio simulcast support.
+
+- v4.4.2
+ - Add disableAVAudioSession option to player.
+ 
+- v4.4.1
+ - Fix a bug with Airplay
+ 
+- v4.4.0
+ - Added autoNetworkRetryEnabled option to FMAudioPlayer. FMAudioPlayer will now by default keep retrying to play music in events of network failure. 
+ - A callback to onUnavailable is no longer final. The player may call onAvailable at a later stage if the first failure was due to network issues. 
+
 - v4.3.11
--  bitcode enable on tvOS static lib
+ -  bitcode enable on tvOS static lib
 
 - v4.3.10
  - Fix for song start notifications on iOS 13 and notch

@@ -9,8 +9,7 @@ app.
 
 ## Installation
 
-You don't need to download this repository - you can use CocoaPods or
-Carthage to add this to your app.
+You don't need to download this repository - you can use CocoaPods to add this to your app.
 
 ### CocoaPod
 
@@ -23,31 +22,29 @@ pod "FeedMedia"
 
 ### Carthage
 
-You can add this library via Carthage by adding the following to your CartFile:
+Carthage is no longer updated because it does not support XCFrameworks just yet, but you can still get the last published version via Carthage by adding the following to your CartFile:
 
 ```ruby
 github "feedfm/iOS-SDK"
 ```
 
-.. and then integrate into your app the usual Carthage way.
+.. and then integrate into your app the usual Carthage way. 
+
+### Swift Package Manager
+
+From Xcode 12, you can use [Swift Package Manager](https://swift.org/package-manager/) to add Feed Media to your project.
+
+0. Select File > Swift Packages > Add Package Dependency. Enter `https://github.com/feedfm/iOS-SDK` in the "Choose Package Repository" dialog.
+0. In the next page, specify the version resolving rule as "Up to Next Major" with "4.4.13" as its earliest version.
+0. After Xcode checking out the source and resolving the version, you can choose the "FeedMedia" library and add it to your app target.
 
 ### No package manager? No problem!
 
 If you aren't using CocoaPods or Carthage but want to integrate this
 library in your application, do the following:
 
-- Clone this repository import all files in `Core/*` and
-  `Sources/*` into your project. Use only `Core/libFeedMediaCore.a`
-  for iOS or `Core/libFeedMediaCore-tv.a` for AppleTV.
-
-- Install the (MarqueeLabel)[https://github.com/cbpowell/MarqueeLabel]
-  project (it's only 2 files!)
-
-- Update `FeedMediaCoreProxy.h` so that it includes
-  the core library via `#import "FeedMediaCore.h"` and not via
-  `#import <FeedMediaCore/FeedMediaCore.h>`. Also, replace
-  any references to `<MarqueeLabel/MarqueeLabel.h>` with
-  `"MarqueeLabel.h"`.
+- Clone this repository and drag FeedMedia.xcframeworks folder into frameworks and libraries section of your project. That's it!
+- Optionally you could also add dSYMs files manually.
 
 ## Getting started
 

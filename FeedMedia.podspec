@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "FeedMedia"
-  s.version          = "4.4.0"
+  s.version          = "4.4.12"
   s.summary          = "FeedMedia SDK for Internet radio streaming"
   s.description      = <<-DESC
     Feed.fm allows you to legally add popular music to your mobile app with a Pandora-style
@@ -23,13 +23,14 @@ DESC
 
   s.homepage         = "https://feed.fm/"
   s.license          = 'MIT'
+  s.documentation_url = 'http://demo.feed.fm/sdk/docs/ios/'
   s.author           = { "Eric Lambrecht" => "eric@feed.fm", "Arveen Kumar" => "arveen@feed.fm", "Feed Media" => "support@feed.fm" }
   s.source           = { :git => "https://github.com/feedfm/iOS-SDK.git", :tag => "v#{s.version}" }
-  s.documentation_url = 'http://demo.feed.fm/sdk/docs/ios/'
 
+  s.xcconfig            = { 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/FeedMedia/**"' }
   s.requires_arc = true
 
-  s.ios.deployment_target = '8.0'
+  s.platform         = :ios, '11.0'
   s.tvos.deployment_target = '11.0'
 
   # common source files/dependencies
@@ -48,5 +49,13 @@ DESC
   s.tvos.vendored_library = 'Core/libFeedMediaCore-tv.a'
 
   s.frameworks = 'AVFoundation', 'MediaPlayer', 'CoreMedia'
+  
+  s.default_subspec     = 'Core'
 
+  s.subspec 'Core' do |core|
+    core.preserve_paths      = 'FeedMedia.xcframework' , 'FeedMedia.dSYMs/FeedMedia.framework.ios-armv7_arm64.dSYM', 'FeedMedia.dSYMs/FeedMedia.framework.ios-i386_x86_64-simulator.dSYM' , 'FeedMedia.dSYMs/FeedMedia.framework.ios-x86_64-maccatalyst.dSYM' ,
+    'FeedMedia.dSYMs/FeedMedia.framework.tvos-arm64.dSYM', 'FeedMedia.dSYMs/FeedMedia.framework.tvos-x86_64-simulator.dSYM'
+    core.vendored_frameworks = 'FeedMedia.xcframework'
+  end
+  
 end
